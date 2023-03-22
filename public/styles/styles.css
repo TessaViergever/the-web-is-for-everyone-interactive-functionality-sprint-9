@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-tertiary-blue);
+}
+
+/* ================ ROOT/CUSTOM PROPERTIES ================ */
+
+:root {
+  --color-primary-light-green: #d5dbd2;
+  --color-primary-white: rgba(255, 255, 255, 1);
+  --color-secondary-green: rgba(86, 112, 74, 1);
+  --color-tertiary-blue: rgb(49, 39, 113);
+
+  --border-radius: 10px;
+  --box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  --headings-padding: 1rem 1rem 0 1rem;
+  --footer-padding: 2rem 1rem 0 1rem;
+
+  --button-border-radius: 5px;
+  --button-padding: 0.4rem;
+}
+
+/* ================ HEADER STYLING ================ */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-primary-light-green);
+  padding: 1rem 1rem 0 1rem;
+}
+
+header a img {
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+}
+
+nav {
+    padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 1rem 0 1rem 0;
+}
+
+nav ul li a {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem;
+}
+
+
+/* ================ HEADINGS STYLING ================ */
+
+h1 {
+  display: flex;
+  justify-content: space-around;
+  padding: var(--headings-padding);
+}
+
+h2 {
+  margin: 0.5rem 0.5rem 0 0.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+}
+
+p {
+  line-height: 150%;
+  margin: 0.5rem 0.5rem 0 0.5rem;
+}
+
+/* ================ STYLING CAROUSEL "TIPS BUURTBEWONERS" ================ */
+.box-buurtbewoners {
+  padding: var(--headings-padding)
+}
+
+.carousel-tips-buurtbewoners {
+  border-radius: 5px;
+  margin: 10px;
+  max-width: 100%;
+  overflow: scroll;
+  box-shadow: var(--box-shadow);
+}
+
+.slides {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding-inline-start: 0;
+  width: 60rem;
+}
+
+.slides-item {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "tip-foto-buurtbewoner";
+  border-radius: var(--border-radius);
+  margin: 10px;
+  font-size: 1rem;
+  padding: 15px;
+  text-align: left;
+}
+
+.slides-item p,
+.slides-item img {
+  grid-area: tip-foto-buurtbewoner;
+}
+
+.slides-item p {
+  background-color: rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+  place-self: start center;
+  border-radius: var(--border-radius);
+  padding: 5%;
+}
+
+.slides-item img {
+  border-radius: var(--border-radius);
+  max-width: 100%;
+  box-shadow: var(--box-shadow);
+}
+
+ /* ================ STYLING "VIND JOUW PLANT" ================ */
+ .box-vind-jouw-plant { 
+  padding: var(--headings-padding);
+  padding-bottom: 2.5rem;
+}
+
+.box-vind-jouw-plant p {
+  padding-bottom: 1rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--headings-padding);
+  margin: 0 3rem 0 3rem;
+}
+
+.button-container .btn3 {
+ margin-bottom: 1.5rem;
+}
+
+
+
+/* ================ BUTTON STYLING ================ */
+
+.btn1 {
+  background-color: var(--color-secondary-green);
+  color: var(--color-primary-white);
+  border: solid 1px var(--color-primary-light-green);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+
+}
+
+.btn2 {
+  background-color: var(--color-primary-white);
+  border: solid 1px var(--color-secondary-green);
+  color: var(--color-secondary-green);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+}
+
+.btn3 {
+  background-color: var(--color-primary-light-green);
+  border: solid 1px var(--color-secondary-green);
+  color: var(--color-secondary-green);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+}
+
+/* ================ FOOTER STYLING ================*/
+footer {
+}
+
+footer img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  width: 1200px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: var(--footer-padding);
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  background-color: var(--color-primary-light-green);
+}
+
+.footer-middle ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--color-primary-light-green);
+  padding: var(--footer-padding);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  padding: var(--footer-padding);
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  background-color: var(--color-primary-white;
+  color: var(--color-primary-white);
+}
+
+/* ============ MEDIA QUERIES ================*/

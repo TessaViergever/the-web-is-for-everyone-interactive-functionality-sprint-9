@@ -1,0 +1,51 @@
+<%- include('./partials/head.ejs') %>
+
+<h1>Plantenlijst</h1>
+
+<% squad.members.forEach(member => { %>
+
+<article>
+  <h2><%= member.name %> <%= member.prefix %> <%= member.surname %></h2>
+  <img
+    src="<%= member.avatar != '' ? member.avatar :'/placeholder.jpg' %>"
+    alt="De avatar van <%= member.name %>"
+  />
+  <a href="/member/?id=<%= member.id %>"></a>
+</article>
+
+<% }) %>
+
+<article>
+  <h2>Jouw plantje hier?</h2>
+  <img src="" alt="Jouw plantje hier?" />
+  <a href="/plant-upload-form.ejs"></a>
+</article>
+
+<%- include('./partials/foot.ejs') %>
+
+
+
+
+
+
+<!---------  code van Justus hieronder ------------------>
+
+<!-- <h1><%= squad.name %></h1>
+
+<% squad.members.forEach(member => { %>
+
+  <article>
+    <h2><%= member.name %> <%= member.prefix %> <%= member.surname %></h2>
+    <img src="<%= member.avatar != '' ? member.avatar :'/placeholder.jpg' %>" alt="De avatar van <%= member.name %>" />
+    <a href="/member/?id=<%= member.id %>"></a>
+  </article>
+
+<% }) %>
+
+
+  <article>
+    <h2>Jouw kaartje hier?</h2>
+    <img src="/placeholder.jpg" alt="Jouw avatar hier?" />
+    <a href="/member/new?squad=<%= squad.id %>&"></a>
+  </article>
+ -->

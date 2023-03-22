@@ -1,31 +1,33 @@
 import express from 'express'
 import indexRoute from './routes/index.js'
 import plantsRoute from './routes/plants.js'
-//evt: nieuwe route naar detail planten pagina hier aanmaken.
-// in routes een plant-detail.js maken
+import plantsDetailRoute from './routes/plant-detail.js'
+import formUploadNewPlantRoute from './routes/form-upload-new-plant.js'
 
-// Maak een nieuwe express app
+// Makes new express app 
 const server = express()
 
-// Stel het poortnummer in
+// Sets server port number 
 server.set('port', process.env.PORT || 8000)
 
-// Stel de view engine in
+// Sets view engine
 server.set('view engine', 'ejs')
 server.set('views', './views')
 
-// Stel de public map in
+// Sets public folder
 server.use(express.static('public'))
 
-// Stel afhandeling van formulieren in
+// Sets handling of forms
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 
-// Stel de routes in
+// Sets routes (define routes @ routes folder)
 server.use('/', indexRoute)
-server.use('/stekje', plantsRoute)
+server.use('/plantenlijst', plantsRoute)
+server.use('/informatie-plant', plantsDetailRoute)
+server.use('/nieuw-stekje-toevoegen', formUploadNewPlantRoute)
 
-// Start met luisteren
+// Starts listening 
 server.listen(server.get('port'), () => {
   console.log(`Application started on http://localhost:${server.get('port')}`)
 })

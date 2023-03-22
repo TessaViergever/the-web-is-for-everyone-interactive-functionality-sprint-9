@@ -12,7 +12,7 @@ export async function fetchJson(url) {
 
 /**
  * postJson() is a wrapper for the experimental node fetch api. It fetches the url
- * passed as a parameter using the POST method and the value from the body paramater
+ * passed as a parameter using the POST method and the value from the body parameter
  * as a payload. It returns the response body parsed through json.
  * @param {*} url the api endpoint to address
  * @param {*} body the payload to send along

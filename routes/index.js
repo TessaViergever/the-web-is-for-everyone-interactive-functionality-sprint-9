@@ -7,4 +7,8 @@ dotenv.config()
 
 const index = express.Router()
 
+index.get("/", (request, response) => {
+    response.render("index");
+});
+
 export default index

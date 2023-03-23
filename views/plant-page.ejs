@@ -1,24 +1,24 @@
 <%- include('./partials/head.ejs') %>
 
 <h1>Plantenlijst</h1>
+<h2>Alle plantjes</h2>
 
-<% squad.members.forEach(member => { %>
+<section>
+  <% stekjes.forEach(stekjes=> { %>
+      <article>
+        <h3><%= stekjes.naam %></h3>
+        <p><%= stekjes.aanmelddatum %></p>
+              <button>Reserveer</button>
+      </article>
+      <% }) %>
+</section>
+
 
 <article>
-  <h2><%= member.name %> <%= member.prefix %> <%= member.surname %></h2>
-  <img
-    src="<%= member.avatar != '' ? member.avatar :'/placeholder.jpg' %>"
-    alt="De avatar van <%= member.name %>"
-  />
-  <a href="/member/?id=<%= member.id %>"></a>
-</article>
-
-<% }) %>
-
-<article>
-  <h2>Jouw plantje hier?</h2>
-  <img src="" alt="Jouw plantje hier?" />
-  <a href="/plant-upload-form.ejs"></a>
+  <h3>Jouw plantje hier?</h3>
+  <img src="/images/afbeeldingen-rechtenvrij/placeholder.jpeg" alt="Jouw plantje hier?" />
+  <a href="/plantenlijst/nieuw-stekje-toevoegen">plant uploaden</a> 
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quasi earum dolorem sapiente suscipit eaque optio exercitationem maiores dolore deleniti, fugiat deserunt obcaecati voluptate error reiciendis hic tempore. Illum, adipisci.</p>
 </article>
 
 <%- include('./partials/foot.ejs') %>
@@ -27,25 +27,3 @@
 
 
 
-
-<!---------  code van Justus hieronder ------------------>
-
-<!-- <h1><%= squad.name %></h1>
-
-<% squad.members.forEach(member => { %>
-
-  <article>
-    <h2><%= member.name %> <%= member.prefix %> <%= member.surname %></h2>
-    <img src="<%= member.avatar != '' ? member.avatar :'/placeholder.jpg' %>" alt="De avatar van <%= member.name %>" />
-    <a href="/member/?id=<%= member.id %>"></a>
-  </article>
-
-<% }) %>
-
-
-  <article>
-    <h2>Jouw kaartje hier?</h2>
-    <img src="/placeholder.jpg" alt="Jouw avatar hier?" />
-    <a href="/member/new?squad=<%= squad.id %>&"></a>
-  </article>
- -->

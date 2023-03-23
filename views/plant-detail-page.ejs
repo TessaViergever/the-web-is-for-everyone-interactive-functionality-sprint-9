@@ -1,11 +1,20 @@
 <%- include('./partials/head.ejs') %>
 
-
+<!-- info about the on plant-page selected plant -->
 <section>
   <h2><%= member.name %> <%= member.prefix %> <%= member.surname %></h2>
   <img src="<%= member.avatar != '' ? member.avatar :'/placeholder.jpg' %>" alt="De avatar van <%= member.name %>" />
   <p><%- member.bio.html %></p>
 </section>
+
+<!-- overzichtspagina alle planten (moet in plant-page.ejs) -->
+<% squad.members.forEach(member => { %>
+  <article>
+    <h2><%= member.name %> <%= member.prefix %> <%= member.surname %></h2>
+    <img src="<%= member.avatar != '' ? member.avatar :'/placeholder.jpg' %>" alt="De avatar van <%= member.name %>" />
+    <a href="/member/?id=<%= member.id %>"></a>
+  </article>
+<% }) %>
 
 <%- include('./partials/foot.ejs') %>
 

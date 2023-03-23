@@ -13,10 +13,10 @@ formUploadNewPlantRoute.get("/nieuw", (request, response) => {
 });
 
 // Takes care of sending the form
-formUploadNewPlantRoute.post("/plantenlijst", (request, response) => {
+formUploadNewPlantRoute.post("/plantenlijst/nieuw", (request, response) => {
   console.log(request.body);
   // Calls the API with POST method
-  const url = `${process.env.API_URL}/plantenlijst`; // stekje of stekjes (even checken)
+  const url = `${process.env.API_URL}/plantenlijst`;
 
   postJson(url, request.body).then((data) => {
     // Values from the form (not the API)

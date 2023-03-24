@@ -1,29 +1,33 @@
 <%- include('./partials/head.ejs') %>
 
-<h1>Plantenlijst</h1>
-<h2>Alle plantjes</h2>
+<div class="plantenlijst-wrapper">
+  <h1>Plantenlijst</h1>
+  <h2>..</h2>
 
-<section>
-  <% stekjes.forEach(stekjes=> { %>
-      <article>
-        <h3><%= stekjes.naam %></h3>
-        <p><%= stekjes.aanmelddatum %></p>
-              <button>Reserveer</button>
-      </article>
-      <% }) %>
-</section>
+  <div class="wrapper-stekjes">
+    <% stekjes.forEach(stekjes=> { %>
+    <article class="stekjes">
+      <h3><%= stekjes.naam %></h3>
+      <p><%= stekjes.aanmelddatum %></p>
+      <img src="/images/afbeeldingen-rechtenvrij/placeholder.jpeg">
+      <button class="btn2">Reserveer</button>
+    </article>
+    <% }) %>
 
+    <article class="jouw-stekje">
+      <h3>Jouw plantje hier?</h3>
+      <img href="/plantenlijst/nieuw-stekje-toevoegen" src="/images/afbeeldingen-rechtenvrij/placeholder.jpeg" alt="Jouw plantje hier?">
+      <a href="/plantenlijst/nieuw-stekje-toevoegen">plant uploaden</a>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quasi
+        earum dolorem sapiente suscipit eaque optio exercitationem maiores
+        dolore deleniti, fugiat deserunt obcaecati voluptate error reiciendis
+        hic tempore. Illum, adipisci.
+      </p>
+      <button class="btn2">Toevoegen</button>
+    </article>
+  </div>
+</div>
 
-<article>
-  <h3>Jouw plantje hier?</h3>
-  <img src="/images/afbeeldingen-rechtenvrij/placeholder.jpeg" alt="Jouw plantje hier?" />
-  <a href="/plantenlijst/nieuw-stekje-toevoegen">plant uploaden</a> 
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quasi earum dolorem sapiente suscipit eaque optio exercitationem maiores dolore deleniti, fugiat deserunt obcaecati voluptate error reiciendis hic tempore. Illum, adipisci.</p>
-</article>
-
-<%- include('./partials/foot.ejs') %>
-
-
-
-
+  <%- include('./partials/foot.ejs') %>
 

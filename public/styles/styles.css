@@ -8,7 +8,7 @@
 /* ================ ROOT/CUSTOM PROPERTIES ================ */
 
 :root {
-  --color-primary-light-green: #d5dbd2;
+  --color-primary-light-green: rgba(213, 219, 210, 1);
   --color-primary-white: rgba(255, 255, 255, 1);
   --color-secondary-green: rgba(86, 112, 74, 1);
   --color-tertiary-blue: rgb(49, 39, 113);
@@ -153,6 +153,51 @@ p {
 .button-container .btn3 {
  margin-bottom: 1.5rem;
 }
+
+/* ===================== PLANT-PAGE.EJS STYLING =================== */
+.plantenlijst-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: var(--headings-padding);
+  margin: 0 1rem 1rem 1rem;
+}
+
+.plantenlijst-wrapper h1{
+  margin: 0 3rem 0 3rem;
+}
+
+.plantenlijst-wrapper h2 {
+  margin: 0 3rem 0 3rem;
+}
+
+
+.stekjes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(213, 219, 210, 0.2);
+  margin: 0 1rem 1rem 1rem;  
+  border-radius: var(--border-radius);
+
+}
+
+.wrapper-stekjes .stekjes img {
+  border-radius: var(--border-radius);
+  max-width: 100%;
+  padding: 2rem 3rem 2rem 3rem;
+}
+
+.jouw-stekje img {
+  border-radius: var(--border-radius);
+  max-width: 100%;
+  padding: 1rem;
+  border-radius: var(--button-border-radius);
+}
+
+
+
 
 
 

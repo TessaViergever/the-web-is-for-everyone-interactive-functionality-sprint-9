@@ -5,6 +5,10 @@
   color: var(--color-tertiary-blue);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ================ ROOT/CUSTOM PROPERTIES ================ */
 
 :root {
@@ -39,21 +43,61 @@ header a img {
   height: auto;
 }
 
-nav {
-    padding: 1rem;
-}
+/* werkt nog niet zoals hoort.. */
+.main-navigation {
+    position: absolute;
+    transform: translateY(-100%);
+    /* display: none; */
+    transition: all 0.25s;
+  }
+  
+  .main-navigation.open {
+    transform: translateY(0);
+    position: relative;
+    padding: 5rem;
+    display: contents;
+  } 
 
-nav ul {
+  /* verwijderd bolletje voor menu item, zet ze in row + centreert ze */
+  .main-navigation ul {
   list-style: none;
   display: flex;
   padding: 1rem 0 1rem 0;
 }
 
-nav ul li a {
+/* zet links in menu items nog iets netter neer */
+.main-navigation ul li a {
   display: flex;
   justify-content: space-around;
   padding: 0.2rem;
 }
+
+/* dit is de button met daarin SVG icons voor open/close menu */
+#hamburger-menu {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  background-color: var(--color-primary-light-green);
+  color: var(--color-tertiary-blue);
+  
+}
+
+/*  */
+#hamburger-menu .close-menu {
+  display: none;
+}
+
+#hamburger-menu.open .open-menu {
+  display: none;
+}
+
+#hamburger-menu.open .close-menu {
+  display: block;
+}
+
+
 
 
 /* ================ HEADINGS STYLING ================ */
@@ -168,8 +212,9 @@ p {
   margin: 0 3rem 0 3rem;
 }
 
-.plantenlijst-wrapper h2 {
-  margin: 0 3rem 0 3rem;
+.plantenlijst-wrapper p {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 
@@ -180,13 +225,25 @@ p {
   background: rgba(213, 219, 210, 0.2);
   margin: 0 1rem 1rem 1rem;  
   border-radius: var(--border-radius);
-
+  padding: 1rem;
 }
+
+
 
 .wrapper-stekjes .stekjes img {
   border-radius: var(--border-radius);
   max-width: 100%;
   padding: 2rem 3rem 2rem 3rem;
+}
+
+.jouw-stekje {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(213, 219, 210, 0.2);
+  margin: 0 1rem 1rem 1rem;  
+  border-radius: var(--border-radius);
+  padding: 1rem;
 }
 
 .jouw-stekje img {
@@ -195,9 +252,6 @@ p {
   padding: 1rem;
   border-radius: var(--button-border-radius);
 }
-
-
-
 
 
 
@@ -227,6 +281,13 @@ p {
   border-radius: var(--button-border-radius);
   padding: var(--button-padding);
 }
+
+/* .btn3:hover {
+  background-color: var(--color-secondary-green);
+  box-shadow:var(--box-shadow);
+} 
+
+.btn3:focus {} */
 
 /* ================ FOOTER STYLING ================*/
 footer {
@@ -270,3 +331,69 @@ footer img {
 }
 
 /* ============ MEDIA QUERIES ================*/
+
+/* nav hamburger icon -> naast elkaar + burger icon weg */
+@media screen and (min-width: 650px) {
+   .main-navigation {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+  }
+  
+  .main-navigation ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+  }
+
+  .main-navigation ul li a {
+      text-decoration: none;
+  }
+
+  .main-navigation ul li a:hover {
+      border: solid 1px var(--color-secondary-green);
+  }
+
+  #hamburger-menu {
+      display: none;
+  }
+}
+
+
+/* planten pagina planten naast elkaar ipv onder elkaar */
+@media screen and (min-width: 650px) {
+  .wrapper-stekjes {
+     display: flex;
+     flex-wrap: nowrap;
+     flex-direction: row;
+     overflow: scroll;
+     max-width: 100%;
+     gap: 0.2rem;
+ }
+
+ .stekjes {
+  margin: 0 0.2rem 0.2rem 0.2rem;
+  padding: 1rem;
+ }
+
+ .jouw-stekje {
+  margin: 0 0.2rem 0.2rem 0.2rem;
+  padding: 1rem;
+ }
+
+ .wrapper-stekjes .article {
+  overflow: hidden;
+ }
+
+ .wrapper-stekjes .stekjes img {
+  border-radius: var(--border-radius);
+  max-width: 100%;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+.wrapper-stekjes .jouw-stekje img {
+  border-radius: var(--border-radius);
+  max-width: 100%;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+}
+}

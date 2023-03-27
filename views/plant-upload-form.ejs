@@ -1,6 +1,7 @@
 <%- include('./partials/head.ejs') %>
 
-
+<div>
+<h1>Voeg jouw plant toe aan de stekjesbieb</h1>
 	
 <form id="form-upload-plant" action="/plantenlijst" method="post">
 	<% if(locals.error !== undefined){ %>
@@ -8,7 +9,7 @@
 	<% } %>
 
 	<fieldset>
-		<legend>Voeg een nieuwe plant toe</legend>
+		<legend>Vul dit formulier in en klik op toevoegen</legend>
 		
 		<!-- <label for="avatar">Upload een foto van je plant:</label>
 		<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"> -->
@@ -31,7 +32,7 @@
 </form>
 
 <button><a href="/plantenlijst">Terug naar plantenlijst</a></button>
-
+</div>
 
 
 <%- include('./partials/foot.ejs') %>

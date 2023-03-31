@@ -35,22 +35,69 @@ header {
   justify-content: space-between;
   background-color: var(--color-primary-light-green);
   padding: 1rem 1rem 0 1rem;
+  margin: 0;
+  /* position: absolute; */
 }
 
+/* logo styling */
 header a img {
-  width: 150px;
+  width: 175px;
   max-width: 100%;
   height: auto;
 }
 
-/* werkt nog niet zoals hoort.. */
-.main-navigation {
-    position: absolute;
-    transform: translateY(-100%);
-    /* display: none; */
-    transition: all 0.25s;
-  }
-  
+header a p {
+  margin: 0;
+}
+
+.logo-link:hover {
+  transform: scale(1.2);
+}
+
+/* header navigation styling */
+
+/* = <a> met SVG icons: open/close menu */
+#hamburger-menu {   
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  background-color: var(--color-primary-light-green);
+  color: var(--color-tertiary-blue);
+  padding: 1rem 1rem 0 0;
+}
+
+/* when this class is active, the hamburger icon is not displayed */
+#hamburger-menu.open .open-menu {
+  display: none;
+} 
+
+/* when this class is active, the menu text under menu-icon is not displayed */
+#hamburger-menu.open p {
+  display: none;
+} 
+
+/* when this class is active, the X icon is displayed*/
+ #hamburger-menu.open .close-menu {
+  display: block;
+}  
+
+/* in normal state, the X icon is not displayed */
+#hamburger-menu .close-menu {
+  display: none;
+}
+
+
+ .main-navigation {             
+    z-index: 100;
+    position: fixed;              /* nav niet scrollbaar -> is dit nodig? */
+    transform: translateY(-100%); /* plaatst nav bovenin buiten viewport */
+    display: none;               /* default = nav is niet zichtbaar */
+    transition: all 0.25s;       /* drop up/down snelheid */
+  } 
+   
+  /* menu-icon clicked = adds this class to main-nav */
   .main-navigation.open {
     transform: translateY(0);
     position: relative;
@@ -61,7 +108,7 @@ header a img {
   /* verwijderd bolletje voor menu item, zet ze in row + centreert ze */
   .main-navigation ul {
   list-style: none;
-  display: flex;
+  /* display: flex; */
   padding: 1rem 0 1rem 0;
 }
 
@@ -72,35 +119,35 @@ header a img {
   padding: 0.2rem;
 }
 
-/* dit is de button met daarin SVG icons voor open/close menu */
-#hamburger-menu {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  border: none;
-  background-color: var(--color-primary-light-green);
-  color: var(--color-tertiary-blue);
-  
-}
-
-/*  */
-#hamburger-menu .close-menu {
-  display: none;
-}
-
-#hamburger-menu.open .open-menu {
-  display: none;
-}
-
-#hamburger-menu.open .close-menu {
-  display: block;
-}
 
 
 
 
-/* ================ HEADINGS STYLING ================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================ HEADERS & TEXT STYLING ================ */
 
 h1 {
   display: flex;
@@ -124,6 +171,7 @@ p {
   line-height: 150%;
   margin: 0.5rem 0.5rem 0 0.5rem;
 }
+
 
 /* ================ STYLING CAROUSEL "TIPS BUURTBEWONERS" ================ */
 .box-buurtbewoners {
@@ -290,10 +338,9 @@ p {
 .btn3:focus {} */
 
 /* ================ FOOTER STYLING ================*/
-footer {
-}
 
-footer img {
+/*  buurtcampus footer logo */
+.footer-top img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -302,6 +349,20 @@ footer img {
   width: 1200px;
 }
 
+/* social icons */
+.footer-middle ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--color-primary-light-green);
+  padding: var(--footer-padding);
+}
+
+.footer-middle ul li:hover {
+  transform: scale(1.2);
+}
+
+/* newsletter form */
 .newsletter-form {
   display: flex;
   flex-direction: column;
@@ -312,14 +373,29 @@ footer img {
   background-color: var(--color-primary-light-green);
 }
 
-.footer-middle ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
+
+/* main navigation in footer */
+.wrapper-footer-nav {
   background-color: var(--color-primary-light-green);
-  padding: var(--footer-padding);
+  padding-bottom: 1rem;
 }
 
+#footer-navigation ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-left:0;
+}
+
+#footer-navigation ul li {
+  list-style: none;
+}
+
+#footer-navigation ul li:hover {
+  transform: scale(1.2);
+}
+
+/* made with love */
 .footer-bottom {
   display: flex;
   justify-content: center;
@@ -328,17 +404,13 @@ footer img {
   padding-top: 0.5rem;
   background-color: var(--color-primary-white);
   color: var(--color-primary-white);
+  font-size: 0.7rem;
 }
 
 /* ============ MEDIA QUERIES ================*/
 
-/* nav hamburger icon -> naast elkaar + burger icon weg */
+/* screen > 650px = nav menu visible, hamburger icon gone */
 @media screen and (min-width: 650px) {
-   .main-navigation {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-  }
   
   .main-navigation ul {
       list-style: none;
@@ -354,9 +426,24 @@ footer img {
       border: solid 1px var(--color-secondary-green);
   }
 
+  /* .open-menu {
+    display: none;
+  } 
+
+  #hamburger-menu p {
+    display: none;
+  }  */
+
   #hamburger-menu {
-      display: none;
+    display:none;
   }
+   
+  .main-navigation {
+    display: inline;
+      flex-direction: row;
+      align-items: flex-end;
+  } 
+
 }
 
 

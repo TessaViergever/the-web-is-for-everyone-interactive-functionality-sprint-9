@@ -42,7 +42,7 @@ Het formulier om een stekje toe te voegen is op de volgende twee manieren bereik
 **Hoe ik progressive enhancement heb toegepast in dit project:**
 1. als eerste een werkende basis versie van de website gemaakt met HTML
 2. deze heb ik verrijkt met CSS (de Plant Swap huisstijl implementeren en een overzichtelijkere lay-out van de pagina)
-3. tot slot heb ik JavaScript toegevoegd om de gebruikerservaring te verbeteren
+3. de volgende stap is JavaScript toevoegen om de gebruikerservaring te verbeteren (nog n.v.t. op dit project) 
 
 ## Licentie
 

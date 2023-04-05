@@ -7,6 +7,7 @@
   * [Beschrijving](#beschrijving)
   * [Gebruik](#gebruik)
   * [Kenmerken](#kenmerken)
+  * [Installatie](#installatie)
   * [Licentie](#licentie)
 
 ## Beschrijving
@@ -43,6 +44,16 @@ Het formulier om een stekje toe te voegen is op de volgende twee manieren bereik
 1. als eerste een werkende basis versie van de website gemaakt met HTML
 2. deze heb ik verrijkt met CSS (de Plant Swap huisstijl implementeren en een overzichtelijkere lay-out van de pagina)
 3. de volgende stap is JavaScript toevoegen om de gebruikerservaring te verbeteren (nog n.v.t. op dit project) 
+
+## Installatie
+
+<!-- Wat is belangrijk om te weten wanneer een andere developer met jouw werk aan de slag gaat? -->
+
+* Neem .gitignore op zodat de node_modules niet online worden gezet<br>
+* Check of package.json aanwezig is <br>
+* Repository forken en/of clonen<br>
+* Npm install en npm start (check vooraf of het start script opgenomen in de package.json)<br>
+* API url staat in .env <!-- evt. toevoegen: een example.env --><br>
 
 ## Licentie
 

@@ -15,6 +15,9 @@
 Buurtbewoners van Amsterdam Oost kunnen met behulp van een formulier een stekje toevoegen op de webiste van Plant Swap. Het stekje dat zij toevoegen via dit formulier zal bij de andere planten geplaatst worden op de plantenlijst overzichtpagina.
 
 <!-- Voeg een mooie poster visual toe 📸 -->
+<img width="" alt="formulier om een stekje toe te voegen" src="https://user-images.githubusercontent.com/112861180/230034447-2292911d-5dd4-4370-b4e3-f16e35cbc3f1.png">
+
+
 
 <!-- Voeg een link toe naar Github Pages 🌐-->
 https://wild-pink-fossa-tutu.cyclic.app/plantenlijst/nieuw-stekje-toevoegen
